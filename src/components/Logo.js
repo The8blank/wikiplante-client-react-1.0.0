@@ -2,10 +2,10 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div>
-      <h1>
+    <div className="logo">
+      <h2>
         Wikiplante
-      </h1>
+      </h2>
     </div>
   );
 };
