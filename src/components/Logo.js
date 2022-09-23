@@ -1,15 +1,13 @@
-import React from 'react';
-
+import React from "react";
 
 const Logo = () => {
-    return (
-        <div>
-            <div className="logo">
-                <img src="./logo192.png" alt="logo wikiplante" />
-                <h3>WikiPlante</h3>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h1>
+        Wikiplante
+      </h1>
+    </div>
+  );
 };
 
 export default Logo;
