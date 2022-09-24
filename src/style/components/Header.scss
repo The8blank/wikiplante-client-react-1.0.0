@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ebe3d1;
+  border-radius: 10px;
+
+
+  .logo {
+    height: 125px;
+    width: 200px;
+
+    margin-left: 20px;
+
+    background-image: url("../images/Wikiplante.png");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  div {
+    
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      width: fit-content;
+      margin-right: 50px;
+
+      color: #505168;
+      font-family: 'Overpass', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+
+    
+
+    a { 
+        text-decoration: none;
+        color: #505168;
+    }
+  }
+  
+}
+

@@ -4,10 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UidContext } from "./components/AppContext";
 import About from "./pages/About";
 import Home from "./pages/Home";
-import Plantes from "./pages/Plante";
+import Plante from "./pages/Plante";
 import Profil from "./pages/Profil";
 import axios from "axios";
 import { useEffect } from "react";
+import Navigation from "./components/Navigation";
 
 const App = () => {
   const [uid, setUid] = useState(null);
@@ -29,9 +30,10 @@ const App = () => {
   return (
     <UidContext.Provider value={uid}>
       <BrowserRouter>
+      <Navigation/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/plantes" element={<Plantes />} />
+          <Route path="/plante" element={<Plante />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Home />} />

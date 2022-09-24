@@ -1,16 +1,13 @@
-import React from 'react';
-import Logo from '../components/Logo';
-import Navigation from '../components/Navigation';
-import Herbier from '../components/Herbier';
+import React from "react";
 
-const Plantes = () => {
-    return (
-        <div>
-            <Logo/>
-            <Navigation/>
-            <Herbier/>
-        </div>
-    );
+const Plante = () => {
+  return (
+    <>
+      <div className="app">
+        <h1>Herbier</h1>
+      </div>
+    </>
+  );
 };
 
-export default Plantes;
+export default Plante;

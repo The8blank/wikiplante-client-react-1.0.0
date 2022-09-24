@@ -1,27 +1,27 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { UidContext } from "../components/AppContext";
+import Deconnexion from "./log/Deconnexion";
 
 const Navigation = () => {
-    return (
-        <div className="navigation">
-            <ul>
-                <NavLink to='/'>
-                    <li>acceuil</li>
-                </NavLink>
-                <NavLink to='/plantes'>
-                    <li>plantes</li>
-                </NavLink>
-                <NavLink to='/profil'>
-                    <li>profil</li>
-                </NavLink>
-                <NavLink to="/about">
-                    <li>à propos</li>
-                </NavLink>
-            </ul>
-        </div>
-    );
+  const uid = useContext(UidContext);
+  return (
+    <nav>
+      <NavLink end to="/">
+        <div className="logo" alt="Wikiplante logo"></div>
+      </NavLink>
+      <div className="liens">
+        <NavLink to ='/plante'>Index</NavLink>
+        {uid ? (
+          <Deconnexion/>
+        ) : (
+          <NavLink to="/profil">
+            <i className="fa-solid fa-user"></i> 
+          </NavLink>
+        )}
+      </div>
+    </nav>
+  );
 };
 
 export default Navigation;
