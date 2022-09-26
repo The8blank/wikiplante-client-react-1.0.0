@@ -10,14 +10,14 @@ const Navigation = () => {
       <NavLink end to="/">
         <img src="./logo.png" alt="Wikiplante" className="h-60" />
       </NavLink>
-      <div className="space-x-10 flex items-center  font-bold text-neutral-400">
-        <NavLink to="/plante"   className={({ isActive }) => (isActive ? 'border-4 border-stone-500 rounded-full p-2' : 'inactive')} >
+      <div className="space-x-10 flex items-center  font-bold text-gray-400 text-lg">
+        <NavLink to="/plante"   className={({ isActive }) => (isActive ? 'border-4 border-gray-400  rounded-full p-2' : 'inactive')} >
           <div >Plantes</div>
         </NavLink>
         {uid ? (
           <Deconnexion />
         ) : (
-          <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-stone-500 rounded-full p-2' : 'inactive')}>
+          <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-gray-400 rounded-full p-2' : 'inactive')}>
             <div className="">
               <i className="fa-solid fa-user"></i>
             </div>

@@ -20,10 +20,10 @@ const Log = (props) => {
   return (
     <div className="flex flex-col bg-stone-300/70 w-[450px] h-[450px] items-center space-y-3 p-3 rounded-lg shadow-2xl font-vercetti">
       <ul className="font-bold hover:cursor-pointer flex space-x-8">
-        <li id="connexion" onClick={handleModals} className={connexionModal? 'border-b-2 rounded-l shadow-md' : null}>
+        <li id="connexion" onClick={handleModals} className={connexionModal? 'border-b-2 rounded-l px-2' : null}>
           Connexion
         </li>
-        <li id="inscription" onClick={handleModals} className={inscriptionModal? 'border-b-2 rounded-l shadow-md' : null}>
+        <li id="inscription" onClick={handleModals} className={inscriptionModal? 'border-b-2 rounded-l px-2' : null}>
           S'inscrire
         </li>
       </ul>

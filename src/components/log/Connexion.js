@@ -38,7 +38,7 @@ const Connexion = () => {
         className="space-y-2 rounded flex flex-col p-5"
       >
         <label htmlFor="Email" className="font-bold">
-          Email
+          Email :
         </label>
         <input
           type="text"
@@ -47,10 +47,10 @@ const Connexion = () => {
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          className="bg-gray-200/50 appearance-none border-2 border-gray-200/50 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-gray-500/50"
+          className="  bg-gray-200/50 appearance-none border-2 border-gray-200/50 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-gray-500/50"
         />
         <label htmlFor="password" className="font-bold">
-          Password
+          Password :
         </label>
         <input
           type="password"

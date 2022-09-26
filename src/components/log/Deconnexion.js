@@ -20,7 +20,7 @@ const Deconnexion = () => {
     window.location = "/"
   };
 
-  return <i className="fa-solid fa-right-from-bracket" onClick={logout}></i>;
+  return <i className="fa-solid fa-right-from-bracket text-lg hover:cursor-pointer" onClick={logout}></i>;
 };
 
 export default Deconnexion;
