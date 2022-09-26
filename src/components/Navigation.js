@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink end to="/">
-        <div className="logo" alt="Wikiplante logo"></div>
+        <div className="logo" alt="Wikiplante logo">WIKIPLANTE</div>
       </NavLink>
       <div className="liens">
         <NavLink to ='/plante'>Index</NavLink>

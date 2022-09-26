@@ -7,7 +7,12 @@ const Home = () => {
   return (
     <>
       <div className="app">
-        <h1>ACCEUIL</h1>
+        <h2>
+          Bienvenue sur Wikiplante
+        </h2>
+        <p>
+          Une Base de donnée sur les vegetaux pour étudiant professionnels
+        </p>
       </div>
     </>
   );

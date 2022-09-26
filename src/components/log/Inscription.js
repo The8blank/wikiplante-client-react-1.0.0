@@ -10,60 +10,57 @@ const Inscription = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    
-    axios.post('http://localhost:8080/api/user/signup', {
-      username,
-      email,
-      password
-    },{withCredentials: true})
-    .then((res) => {
-      window.location = '/'
-    })
-    .catch((err) => {
-      errorMessage.innerHTML = err.response.data.errors[0].message;
-    });
-  }
+
+    axios
+      .post(
+        "http://localhost:8080/api/user/signup",
+        {
+          username,
+          email,
+          password,
+        },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        window.location = "/";
+      })
+      .catch((err) => {
+        errorMessage.innerHTML = err.response.data.errors[0].message;
+      });
+  };
 
   return (
     <div>
-      <hgroup>
-        <h2>Welcome !</h2>
-        <p>Entrez vos informations pour creer votre compte</p>
-      </hgroup>
+      <p>Entrez vos informations pour creer votre compte</p>
 
-      <form
-        action=""
-        onSubmit={handleLogin}
-        id="inscription-form"
-        className="log-form"
-      >
-        <div className="group log-input">
+      <form action="" onSubmit={handleLogin} id="inscription-form">
+        <div className="log-input">
           <input
             type="text"
             id="username"
             name="username"
             placeholder="Username"
-            required = 'required'
+            required="required"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="group log-input">
+        <div className="log-input">
           <input
             type="text"
             id="email"
             name="email"
             placeholder="Email"
-            required = 'required'
+            required="required"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="group log-input">
+        <div className="log-input">
           <input
             type="password"
             id="password"
             name="password"
             placeholder="Password"
-            required = 'required'
+            required="required"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

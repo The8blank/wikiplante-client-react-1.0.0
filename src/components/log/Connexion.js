@@ -11,12 +11,16 @@ const Connexion = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8080/api/user/login", {
-        email,
-        password,
-      },{withCredentials: true})
+      .post(
+        "http://localhost:8080/api/user/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      )
       .then((res) => {
-        window.location = '/'
+        window.location = "/";
       })
       .catch((err) => {
         errorMessage.innerHTML = err.response.data.errors.message;
@@ -25,17 +29,8 @@ const Connexion = () => {
 
   return (
     <div>
-      <hgroup>
-        <h2>Welcome back!</h2>
-        <p>Entrez vos informations pour vous connecter à votre compte</p>
-      </hgroup>
-
-      <form
-        action=""
-        onSubmit={handleLogin}
-        id="connexion-form"
-        className="log-form"
-      >
+      <p>Entrez vos informations pour vous connecter à votre compte</p>
+      <form onSubmit={handleLogin} id="connexion-form" className="log-form">
         <div className="group log-input">
           <label htmlFor="Email">Email</label>
           <br />
