@@ -18,16 +18,16 @@ const Log = (props) => {
   };
 
   return (
-    <div>
-      <ul>
-        <li id="connexion" onClick={handleModals}>
-          connexion
+    <div className="flex flex-col bg-stone-300/70 w-[450px] h-[450px] items-center space-y-3 p-3 rounded-lg shadow-2xl font-vercetti">
+      <ul className="font-bold hover:cursor-pointer flex space-x-8">
+        <li id="connexion" onClick={handleModals} className={connexionModal? 'border-b-2 rounded-l shadow-md' : null}>
+          Connexion
         </li>
-        <li id="inscription" onClick={handleModals}>
-          s'inscrire
+        <li id="inscription" onClick={handleModals} className={inscriptionModal? 'border-b-2 rounded-l shadow-md' : null}>
+          S'inscrire
         </li>
       </ul>
-      {inscriptionModal && <Inscription />}
+      {inscriptionModal && <Inscription/>}
       {connexionModal && <Connexion />}
     </div>
   );

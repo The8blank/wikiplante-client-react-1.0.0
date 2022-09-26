@@ -1,30 +1,33 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Telugu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Telugu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+@font-face {
+  font-family: "vercetti";
+  src: url(./font/vercetti/vercetti-regular-webfont.woff) format("woff"),
+       url(./font/vercetti/vercetti-regular-webfont.woff2) format("woff2");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+@import url(./components/Nav.scss);
 
 body {
-    display: flex;
-    justify-content: center;
-    background: url(./images/bg.jpg) no-repeat scroll;
-    background-attachment:fixed;
-    background-size: cover;
-    
-
+  display: flex;
+  justify-content: center;
+  background: url(./images/bg.jpg) no-repeat scroll;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
 }
 
 #root {
-    margin: 50px;
-    max-width: 1900px;
-    width: 100%;
+  margin: 50px;
+  max-width: 1900px;
+  width: 100%;
+  height: 80%;
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-

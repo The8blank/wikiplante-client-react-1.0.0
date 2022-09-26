@@ -6,17 +6,21 @@ import Deconnexion from "./log/Deconnexion";
 const Navigation = () => {
   const uid = useContext(UidContext);
   return (
-    <nav>
+    <nav className=" flex justify-between items-center font-vercetti">
       <NavLink end to="/">
-        <div className="logo" alt="Wikiplante logo">WIKIPLANTE</div>
+        <img src="./logo.png" alt="Wikiplante" className="h-60" />
       </NavLink>
-      <div className="liens">
-        <NavLink to ='/plante'>Index</NavLink>
+      <div className="space-x-10 flex items-center  font-bold text-neutral-400">
+        <NavLink to="/plante"   className={({ isActive }) => (isActive ? 'border-4 border-stone-500 rounded-full p-2' : 'inactive')} >
+          <div >Plantes</div>
+        </NavLink>
         {uid ? (
-          <Deconnexion/>
+          <Deconnexion />
         ) : (
-          <NavLink to="/profil">
-            <i className="fa-solid fa-user"></i> 
+          <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-stone-500 rounded-full p-2' : 'inactive')}>
+            <div className="">
+              <i className="fa-solid fa-user"></i>
+            </div>
           </NavLink>
         )}
       </div>

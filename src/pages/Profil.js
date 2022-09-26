@@ -8,7 +8,7 @@ const Profil = () => {
 
   return (
     <>
-      <div className="app">
+      <div className="app h-full flex justify-center items-center">
           {uid ? (
             <h1>UPDATE PAGE</h1>
           ) : (

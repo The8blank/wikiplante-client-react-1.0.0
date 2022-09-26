@@ -10,8 +10,8 @@ module.exports = {
         'cream' : '#ebe3d1'
       },
       fontFamily: {
-        'overpass': ['Overpass'],
-      }
+        'vercetti': ['vercetti'],
+      },
     },
   },
   plugins: [],

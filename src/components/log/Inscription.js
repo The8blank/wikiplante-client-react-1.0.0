@@ -30,44 +30,59 @@ const Inscription = () => {
   };
 
   return (
-    <div>
-      <p>Entrez vos informations pour creer votre compte</p>
+    <div className=" p-5 space-y-5">
+      <p className="font-semibold text-center">
+        Entrez vos informations pour creer votre compte
+      </p>
 
-      <form action="" onSubmit={handleLogin} id="inscription-form">
-        <div className="log-input">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
-            required="required"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="log-input">
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required="required"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="log-input">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            required="required"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+      <form
+        onSubmit={handleLogin}
+        id="inscription-form"
+        className="space-y-2 rounded flex flex-col p-5"
+      >
+        <label htmlFor="username" className="font-bold">
+          Username :
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required="required"
+          onChange={(e) => setUsername(e.target.value)}
+          className="bg-gray-200/50 appearance-none border-2 border-gray-200/50 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-gray-500/50"
+        />
+        <label htmlFor="Email" className="font-bold">
+          Email :
+        </label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required="required"
+          onChange={(e) => setEmail(e.target.value)}
+          className="bg-gray-200/50 appearance-none border-2 border-gray-200/50 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-gray-500/50"
+        />
+        <label htmlFor="password" className="font-bold">
+          Password :
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required="required"
+          onChange={(e) => setPassword(e.target.value)}
+          className="bg-gray-200/50 appearance-none border-2 border-gray-200/50 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-gray-500/50"
+        />
         <div className="error"></div>
-        <div>
-          <input type="submit" id="inscription" value={"Inscription"} />
-        </div>
+        <input
+          type="submit"
+          id="inscription"
+          value={"Inscription"}
+          className="w-[120px] bg-emerald-600 border-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 border rounded self-center"
+        />
       </form>
     </div>
   );
