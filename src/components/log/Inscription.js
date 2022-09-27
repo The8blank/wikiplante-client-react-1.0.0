@@ -81,7 +81,7 @@ const Inscription = () => {
           type="submit"
           id="inscription"
           value={"Inscription"}
-          className="w-[120px] bg-emerald-600 border-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 border rounded self-center"
+          className="relative flex w-full justify-center rounded-md border border-transparent bg-stone-600 py-2 px-4 text-sm font-medium text-white hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2"
         />
       </form>
     </div>

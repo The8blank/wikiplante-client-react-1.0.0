@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         'vercetti': ['vercetti'],
+        'aloeverra': ['aloeverra'],
       },
     },
   },

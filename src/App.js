@@ -9,9 +9,12 @@ import Profil from "./pages/Profil";
 import axios from "axios";
 import { useEffect } from "react";
 import Navigation from "./components/Navigation";
+import { useDispatch } from "react-redux";
+import { getUser } from "./actions/user.actions";
 
 const App = () => {
   const [uid, setUid] = useState(null);
+  const dispatch = useDispatch()
 
   useEffect (() => {
     const loadUid = async () => {
@@ -25,6 +28,8 @@ const App = () => {
     }
 
     loadUid()
+
+    if (uid) dispatch(getUser(uid))
   }, [uid])
 
   return (
