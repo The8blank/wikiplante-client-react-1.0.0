@@ -13,11 +13,11 @@ const Navigation = () => {
       <NavLink end to="/">
         <img src="./logo.png" alt="Wikiplante" className="h-60" />
       </NavLink>
-      <div className="space-x-10 flex items-center  font-bold text-gray-400 text-lg">
-        <NavLink to="/plante"   className={({ isActive }) => (isActive ? 'border-4 border-gray-400  rounded-full p-2' : 'inactive')} >
+      <div className="space-x-10 flex items-center  font-bold text-neutral-400 text-lg">
+        <NavLink to="/plante"   className={({ isActive }) => (isActive ? 'border-4 border-neutral-400  rounded-full p-2' : 'inactive')} >
           <div >Plantes</div>
         </NavLink>
-        <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-gray-400 rounded-full p-2' : 'inactive')}>
+        <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-neutral-400 rounded-full p-2' : 'inactive')}>
             <div className="flex gap-3">
               <i className="fa-solid fa-user"></i>
               {userData? `${userData.username} `: ''}
