@@ -10,6 +10,9 @@ export const getUser = (uid) => {
             .then((res) => {
                 dispatch({type : GET_USER, payload : res.data})
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                console.log('bug');
+                console.log(err)
+            })
     }
 }

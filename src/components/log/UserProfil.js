@@ -14,7 +14,7 @@ const UserProfil = () => {
       <div className="rounded-full bg-neutral-100/10 flex justify-center items-center h-[200px] w-[200px] ">
         <img
           className="h-[150px]"
-          src="/images/photo_users/singe_nft-removebg.png"
+          src="image\Profil_Picture.png"
           alt=""
         />
       </div>
