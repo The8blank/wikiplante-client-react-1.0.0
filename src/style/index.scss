@@ -27,16 +27,22 @@ body {
   background: url(./images/bg.jpg) no-repeat scroll;
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 #root {
   margin: 50px;
   max-width: 1900px;
-  width: 100%;
-  height: 80%;
+  min-width: 80%;
+  min-height: 80%;
 
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  
 }
+
+
+

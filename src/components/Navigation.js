@@ -20,7 +20,7 @@ const Navigation = () => {
         <NavLink to="/profil"  className={({ isActive }) => (isActive ? 'border-4 border-neutral-400 rounded-full p-2' : 'inactive')}>
             <div className="flex gap-3">
               <i className="fa-solid fa-user"></i>
-              {userData? `${userData.username} `: ''}
+              {userData? `${userData.username.charAt(0).toUpperCase() + userData.username.slice(1)} `: ''}
             </div>
           </NavLink>
           {uid ? (
