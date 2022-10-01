@@ -10,32 +10,32 @@ import axios from "axios";
 import { useEffect } from "react";
 import Navigation from "./components/Navigation";
 import { useDispatch } from "react-redux";
-import { getUser } from "./actions/user.actions";
+import { deco, getUser } from "./slices/user/userSlice";
 
 const App = () => {
   const [uid, setUid] = useState(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect (() => {
-    const loadUid = async () => {
-        await axios.get('http://localhost:8080/api/user/jwtid', {withCredentials: true})
-        .then((res) => {
-            setUid(res.data)
-        })
-        .catch((err) => {
-            console.log('no token')
-        });  
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await axios
+        .get("http://localhost:8080/api/user/jwtid", { withCredentials: true })
+        .then((res) => res.data);
+      if (data.result === false) {
+        dispatch(deco());
+      } else if (data.result === true) {
+        dispatch(getUser(data.id));
+        setUid(data.id);
+      }
+    };
 
-    loadUid()
-
-    if (uid) dispatch(getUser(uid))
-  }, [uid])
+    fetchData().catch(console.error);
+  }, []);
 
   return (
     <UidContext.Provider value={uid}>
       <BrowserRouter>
-      <Navigation/>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plante" element={<Plante />} />

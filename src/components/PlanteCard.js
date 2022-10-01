@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 const PlanteCard = (props) => {
   const plante = props.plante;

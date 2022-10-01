@@ -2,11 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const UserProfil = () => {
-  const userData = useSelector((state) => state.userReducer.user);
-  function Log() {
-    return console.log('oui');
-  }
-
+  const userData = useSelector((state) => state.user.user);
   return (
     <>
     {/* card user profil */}
