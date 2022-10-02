@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 const About = () => {
+  const [title, setTitle] = useState("Wikiplante");
+  document.title = title;
   return (
     <>
       <div className="app">

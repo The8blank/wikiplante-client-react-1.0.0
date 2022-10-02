@@ -4,10 +4,8 @@ import cookie from "js-cookie";
 import { useDispatch } from "react-redux";
 import { deco } from "../../slices/user/userSlice";
 
-
-
 const Deconnexion = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const removeCookie = (key) => {
     if (window === undefined) {
@@ -17,16 +15,21 @@ const Deconnexion = () => {
 
   const logout = async () => {
     await axios
-    .get("http://localhost:8080/api/user/logout", { withCredentials: true })
-    .then(() => {
-      removeCookie("jwt");
-    })
-    .catch((err) => console.log(err));
-    window.location = "/"
-    dispatch(deco())
+      .get("http://localhost:8080/api/user/logout", { withCredentials: true })
+      .then(() => {
+        removeCookie("jwt");
+      })
+      .catch((err) => console.log(err));
+    window.location = "/";
+    dispatch(deco());
   };
 
-  return <i className="fa-solid fa-right-from-bracket text-lg hover:cursor-pointer" onClick={logout}></i>;
+  return (
+    <i
+      className="fa-solid fa-right-from-bracket text-lg hover:cursor-pointer"
+      onClick={logout}
+    ></i>
+  );
 };
 
 export default Deconnexion;

@@ -19,10 +19,10 @@ const userSlice = createSlice({
     log: { loading: false, isSucced: false, isReject: false },
   },
   reducers: {
-    deco : (state, action) => {
-        state.user = null
-        state.isLogged = false
-    }
+    deco: (state, action) => {
+      state.user = null;
+      state.isLogged = false;
+    },
   },
   extraReducers: {
     [getUser.pending]: (state) => {
@@ -43,5 +43,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const {deco} = userSlice.actions
-
+export const { deco } = userSlice.actions;

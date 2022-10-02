@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
 import { UidContext } from "./components/AppContext";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Plante from "./pages/Plante";
 import Profil from "./pages/Profil";
+import Fiche from "./pages/Fiche";
 import axios from "axios";
 import { useEffect } from "react";
 import Navigation from "./components/Navigation";
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/profil" element={<Profil />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Home />} />
+          <Route path="/fiche/:id" id="test" element={<Fiche />} />
         </Routes>
       </BrowserRouter>
     </UidContext.Provider>

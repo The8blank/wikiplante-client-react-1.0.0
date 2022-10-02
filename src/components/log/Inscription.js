@@ -67,27 +67,27 @@ const Inscription = () => {
           />
         </div>
         <div className="space-y-2">
-        <label htmlFor="password" className="font-bold ">
-          Password :
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-          required="required"
-          onChange={(e) => setPassword(e.target.value)}
-          className="bg-slate-200/50 appearance-none border-2 border-slate-200/50 rounded w-full py-1 px-2 text-slate-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-slate-500/50"
-        />
+          <label htmlFor="password" className="font-bold ">
+            Password :
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required="required"
+            onChange={(e) => setPassword(e.target.value)}
+            className="bg-slate-200/50 appearance-none border-2 border-slate-200/50 rounded w-full py-1 px-2 text-slate-700 leading-tight focus:outline-none focus:bg-white/50 focus:border-slate-500/50"
+          />
         </div>
         <div className="space-y-2">
-        <div className="error"></div>
-        <input
-          type="submit"
-          id="inscription-btn"
-          value={"Inscription"}
-          className="relative flex w-full justify-center rounded-md border border-transparent bg-slate-600 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
-        />
+          <div className="error"></div>
+          <input
+            type="submit"
+            id="inscription-btn"
+            value={"Inscription"}
+            className="relative hover:cursor-pointer flex w-full justify-center rounded-md border border-transparent bg-slate-600 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+          />
         </div>
       </form>
     </div>
