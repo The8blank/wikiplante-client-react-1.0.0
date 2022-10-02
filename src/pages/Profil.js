@@ -3,10 +3,10 @@ import { UidContext } from "../components/AppContext";
 import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import UserProfil from "../components/log/UserProfil";
-import PlanteCard from "../components/PlanteCard";
+import PlanteCard from "./Plantes/PlanteCard";
 
 const Profil = () => {
-  const [title, setTitle] = useState("Wikiplante");
+  const [title] = useState("Wikiplante");
   document.title = title;
   const state = useSelector((state) => state.user);
   const uid = useContext(UidContext);
@@ -23,8 +23,7 @@ const Profil = () => {
       </div>
       {state.isLogged && uid && userData.Plantes.length >= 1 ? (
         <div
-          id="planteUser"
-          className="box-border sm:max-w-[300px] flex flex-col items-center bg-white/20 rounded-lg gap-10"
+          className="plante box-border sm:max-w-[300px] flex flex-col items-center bg-white/20 rounded-lg gap-10"
         >
           <h2 className="text-2xl font-bold">Vos plantes ajoutées : </h2>
           <div className="scroll flex flex-wrap gap-10 mx-5 justify-center h-[90vh] overflow-scroll snap-center snap-y scroll-smooth px-2">

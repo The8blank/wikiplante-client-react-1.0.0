@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import user from "./user/userSlice.js";
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import plantes from "./plantes/plantesSlice"
+
 
 const rootReducer = combineReducers({
   user,
+  plantes
 });
 
 export default rootReducer;

@@ -23,7 +23,11 @@ const Connexion = () => {
         window.location = "/";
       })
       .catch((err) => {
-        errorMessage.innerHTML = err.response.data.errors;
+       if (err.response.data) {
+        return  errorMessage.innerHTML = err.response.data.errors;
+       }
+
+       errorMessage.innerHTML = err.code
       });
   };
 

@@ -33,7 +33,6 @@ const PlanteCard = (props) => {
           <span>Famille:</span> {plante.famille}
         </p>
         <p className="text-red-800 hover:underline hover:cursor-pointer">
-          {plante.isCompleted ? "Fiche compète" : "Completer"}
         </p>
       </div>
     </div>
