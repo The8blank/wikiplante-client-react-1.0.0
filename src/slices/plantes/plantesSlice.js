@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice,current } from "@reduxjs/toolkit";
+import { original } from 'immer'
 import axios from "axios";
 
 export const getPlantes = createAsyncThunk(
@@ -15,10 +16,12 @@ const plantesSlice = createSlice({
   name: "plantes",
   initialState: {
     plantes: null,
-    planteFetched : false,
+    plantesFiltre: null,
+    planteFetched: false,
     fetch: { loading: false, isSucced: false, isReject: false },
   },
   reducers: {
+   
   },
   extraReducers: {
     [getPlantes.pending]: (state) => {
@@ -26,9 +29,10 @@ const plantesSlice = createSlice({
     },
     [getPlantes.fulfilled]: (state, { payload }) => {
       state.fetch.loading = false;
-      state.plantes = payload
+      state.plantes = payload;
       state.planteFetched = true;
       state.fetch.isSucced = true;
+      
     },
     [getPlantes.rejected]: (state, { payload }) => {
       state.fetch.loading = false;
@@ -37,5 +41,6 @@ const plantesSlice = createSlice({
     },
   },
 });
+
 
 export default plantesSlice.reducer;
