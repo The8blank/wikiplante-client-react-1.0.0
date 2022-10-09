@@ -16,7 +16,7 @@ const PlanteCard = (props) => {
     <div
       onClick={redirect}
       id={plante.id}
-      className="hover:cursor-pointer snap-center bg-slate-300  h-[30%] w-[250px] sm:w-[98%] flex flex-col items-center font-semibold rounded p-5"
+      className="hover:cursor-pointer snap-center bg-slate-300  h-[260px] w-[250px] sm:w-[90%] flex flex-col items-center font-semibold rounded p-5"
     >
       <div className="bg-slate-400 h-10 w-10 flex items-center justify-center rounded-full">
         <i className="fa-solid fa-leaf"></i>

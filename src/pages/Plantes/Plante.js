@@ -12,7 +12,7 @@ const Plante = () => {
   const dispatch = useDispatch();
   const [plantesData, setPlantesData] = useState("");
   const [plantesFiltred, setPlantesFiltred] = useState("");
-  const [searchTerm, setSearchTerm] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Plante = () => {
     const configureFilterService = () => {
       const categorieArray = [];
       for (let i = 0; i < plantesData.length; i++) {
-        console.log(plantesData[i].sous_espece_cultivar );
+        console.log(plantesData[i].sous_espece_cultivar);
         const categorie = plantesData[i].categorie;
         if (!categorieArray.includes(categorie)) {
           categorieArray.push(categorie);
@@ -50,7 +50,14 @@ const Plante = () => {
   };
 
   const argumentSearchTerm = (value) => {
-    const searchIn = value.genre + " " + value.espece + " " + value.nom_commun +" " + value.sous_espece_cultivar;
+    const searchIn =
+      value.genre +
+      " " +
+      value.espece +
+      " " +
+      value.nom_commun +
+      " " +
+      value.sous_espece_cultivar;
 
     if (searchIn.toLowerCase().includes(searchTerm)) {
       return value;
@@ -58,18 +65,33 @@ const Plante = () => {
   };
 
   return (
-    <div className="app plante py-10 box-border sm:max-w-[300px]  w-[85vw] flex flex-col items-center bg-white/20 rounded-lg gap-10">
+    <div className="app plante py-10 box-border sm:max-w-[300px] h-[80vh]  min-w-full flex flex-col items-center  bg-white/20 rounded-lg gap-10">
       <Recherche handleSearchTerm={handleSearchTerm} />
-      <div className="h-[80vh] scroll flex flex-wrap gap-10 mx-5 justify-center overflow-scroll snap-center snap-y scroll-smooth px-2">
-        {plantesData ? (
-          plantesData
-            .filter((val) => argumentSearchTerm(val))
-            .map((plante) => {
-              return <PlanteCard key={plante.id} plante={plante} />;
-            })
-        ) : (
-          <div>no data</div>
-        )}
+      <div className="flex flex-wrap w-fit mx-10 gap-5 overflow-scroll scroll content-start snap-center snap-y scroll-smooth">
+        {plantesFiltred
+          ? searchTerm
+            ? plantesFiltred
+                .filter((val) => argumentSearchTerm(val))
+                .map((plante) => {
+                  return <PlanteCard key={plante.id} plante={plante} />;
+                })
+            : categories.map((categorie) => {
+                return (
+                  <div className=" pt-10 flex flex-wrap flex-col gap-4 snap-start w-full">
+                    <p className="text-3xl font-bold font-aloeverra  text-neutral-900">{categorie} :</p>
+                    <div className="flex flex-wrap gap-5">
+                      {plantesFiltred
+                        .filter((plante) => {
+                          return plante.categorie.includes(categorie);
+                        })
+                        .map((plante) => {
+                          return <PlanteCard key={plante.id} plante={plante} />;
+                        })}
+                    </div>
+                  </div>
+                );
+              })
+          : "no data"}
       </div>
     </div>
   );
